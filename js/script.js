@@ -1,4 +1,4 @@
-const URL_LIST_GAMES ='https://api.rawg.io/api/games?key=0e41ee02d03a43a1a26a1587ac2e2d74&page_size=50';
+const URL_LIST_GAMES ='https://api.rawg.io/api/games?key=0e41ee02d03a43a1a26a1587ac2e2d74&page_size=40&ordering=-metacritic';
 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
@@ -27,7 +27,7 @@ gameList = (arrayGames) => {
         const gameEl = document.createElement('div')
         gameEl.classList.add('game')
         gameEl.innerHTML = `
-            <img src="${games.background_image}" alt="${games.name}">
+            <img src="${games.background_image || './img/halo3.jpg'}" alt="${games.name}">
             <div class="game-info">
                 <h4><a href="viewgame.html?id=${games.id}">${games.name || "Name field empty in API"}</a><h4>
                 <span class="${getClassByRate(games.metacritic)}">${games.metacritic || "No Rate"}</span>
@@ -60,7 +60,7 @@ searchGame = () => {
     console.log("llamada a la funcion searhGame");
     let stringSearch = document.getElementById('search').value;
     if (stringSearch !== undefined){
-        let URL_DETAIL_GAME ='https://api.rawg.io/api/games?key=0e41ee02d03a43a1a26a1587ac2e2d74&search=' + stringSearch;
+        let URL_DETAIL_GAME ='https://api.rawg.io/api/games?key=0e41ee02d03a43a1a26a1587ac2e2d74&search=' + stringSearch +'&page_size=40&ordering=-metacritic';
         fetch(URL_DETAIL_GAME)
         .then(response => response.json())
         .then(data => {

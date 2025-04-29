@@ -15,6 +15,10 @@ let imagesPlatform = [
     imagePlatf: 'xboxone.jpg', 
   },
   {
+    idPlatf: 3,
+    imagePlatf: 'ios.jpg', 
+  },
+  {
     idPlatf: 4,
     imagePlatf: 'pc.jpg', 
   },
@@ -47,6 +51,10 @@ let imagesPlatform = [
     imagePlatf: 'playstation4.jpg', 
   },
   {
+    idPlatf: 21,
+    imagePlatf: 'android.jpg', 
+  },
+  {
     idPlatf: 27,
     imagePlatf: 'playstation.jpg', 
   },
@@ -57,7 +65,19 @@ let imagesPlatform = [
   {
     idPlatf: 79,
     imagePlatf: 'snes.jpg', 
-  },  
+  }, 
+  {
+    idPlatf: 83,
+    imagePlatf: 'n64.jpg', 
+  },
+  {
+    idPlatf: 106,
+    imagePlatf: 'dreamcast.jpg', 
+  }, 
+  {
+    idPlatf: 166,
+    imagePlatf: 'commodore.jpg', 
+  },         
   {
     idPlatf: 186,
     imagePlatf: 'xboxseriesx.jpg', 
@@ -110,7 +130,7 @@ gameDetails = (viewGame) => {
 
     //Contruimos primero la linea de imagen
     const nameImage = document.getElementById('srcImage');
-    nameImage.innerHTML += `<img class="game-image" src="${background_image}" alt="${name}">`;
+    nameImage.innerHTML += `<img class="game-image" src="${background_image || './img/halo3.jpg'}" alt="${name}">`;
 
     // construccion de la tabla
     const productTable = document.getElementById('tableBodyView');
