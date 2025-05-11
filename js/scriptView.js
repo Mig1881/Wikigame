@@ -194,19 +194,6 @@ gameDetails = (viewGame) => {
 }
   
 
-
-function getClassByRate(vote) {
-    if(vote >= 90) {
-        return 'green'
-    } else if(vote >= 80) {
-        return 'orange'
-    } else if(vote >= 60) {  
-        return 'yellow'  
-    } else {
-        return 'red'
-    }
-}
-
 function readPlatform(platformName) {
 
    // Recorro el array para ver si esta lleno
