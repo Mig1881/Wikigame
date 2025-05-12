@@ -181,9 +181,9 @@ gameDetails = (viewGame) => {
       
     arrayPlatformId.forEach((item, ind) => {
       if (ind === 0) {
-        row8.innerHTML += '<a class="element-array" href="javascript:readPlatform(\'' + arrayPlatformId[ind].namePlatform + '\')">' + arrayPlatformId[ind].namePlatform + '</a>';
+        row8.innerHTML += '&nbsp&nbsp' + '<a class="element-array" href="javascript:readPlatform(\'' + arrayPlatformId[ind].namePlatform + '\')">' + arrayPlatformId[ind].namePlatform + '</a>';
       } else {
-        row8.innerHTML += '<a class="element-array" href="javascript:readPlatform(\'' + arrayPlatformId[ind].namePlatform + '\')">' + "  " + arrayPlatformId[ind].namePlatform  + '</a>'
+        row8.innerHTML += '<a class="element-array" href="javascript:readPlatform(\'' + arrayPlatformId[ind].namePlatform + '\')">' + '&nbsp' + arrayPlatformId[ind].namePlatform  + '</a>'
       }
     })
     productTable.appendChild(row8);
